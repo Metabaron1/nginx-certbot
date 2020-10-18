@@ -12,5 +12,5 @@ RUN python3 -m ensurepip
 RUN pip3 install pip --upgrade
 RUN pip3 install certbot-nginx
 
-ADD templates/simplelogin.conf /etc/nginx/conf.d/simplelogin.conf
+#ADD templates/simplelogin.conf /etc/nginx/conf.d/simplelogin.conf
 
