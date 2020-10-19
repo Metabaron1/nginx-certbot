@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 EXPOSE 80 443
-VOLUME /etc/letsencrypt
+#VOLUME /etc/letsencrypt
 #VOLUME /etc/nginx
 
 RUN apk add --update --no-cache python3 python3-dev build-base libressl-dev musl-dev libffi-dev
