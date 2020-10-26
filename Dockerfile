@@ -9,4 +9,4 @@ RUN apk add --update --no-cache certbot certbot-nginx
 ADD generate_config.sh /bin
 ADD templates/simplelogin.conf /etc/nginx/conf.d/simplelogin.conf
 
-CMD ./generate_config.sh --certbot && /usr/sbin/nginx -g daemon
+CMD /bin/sh /bin/generate_config.sh && /usr/sbin/nginx -g daemon
