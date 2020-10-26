@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-EXPOSE 1080 1443
+EXPOSE 80 443
 #VOLUME /etc/letsencrypt
 #VOLUME /etc/nginx
 
@@ -9,4 +9,4 @@ RUN apk add --update --no-cache certbot certbot-nginx
 ADD generate_config.sh /bin
 ADD templates/simplelogin.conf /etc/nginx/conf.d/simplelogin.conf
 
-CMD /bin/sh /bin/generate_config.sh && /usr/sbin/nginx -g daemon
+RUN /bin/sh /bin/generate_config.sh
