@@ -30,5 +30,3 @@ RUN chown -R nginx:nginx /etc/nginx/conf.d /var/cache/nginx && \
     chown nginx:nginx /var/run/nginx.pid
 USER nginx
 CMD /generate_config.sh && nginx -g "daemon off;"
-USER nginx
-CMD /generate_config.sh && nginx -g "daemon off;"
