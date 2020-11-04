@@ -1,9 +1,19 @@
 #!/bin/sh
 
-NGINX_CONF="/etc/nginx/conf.d/simplelogin.conf"
+TEMPLATE="$1"
 
-if [ -z "$MYHOSTNAME" ] ; then
-  MYHOSTNAME="app.mydomain.com"
+if [ -z "$MYDOMAIN" ] ; then
+  MYDOMAIN="mydomain.com"
 fi
 
-sed -i "s/%MYHOSTNAME%/$MYHOSTNAME/g" $NGINX_CONF
+if [ -z "$MYHOSTNAME" ] ; then
+  MYHOSTNAME="app.$MYDOMAIN"
+fi
+
+if [ -z "$LETSENCRYPT_EMAIL" ] ; then
+  LETSENCRYPT_EMAIL="support@$MYDOMAIN"
+fi
+
+sed -i "s/%MYDOMAIN%/$MYDOMAIN/g"			$TEMPLATE
+sed -i "s/%MYHOSTNAME%/$MYHOSTNAME/g"			$TEMPLATE
+sed -i "s/%LETSENCRYPT_EMAIL%/$LETSENCRYPT_EMAIL/g"	$TEMPLATE
