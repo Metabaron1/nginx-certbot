@@ -27,6 +27,4 @@ RUN ln -s /dev/stdout /var/log/letsencrypt/letsencrypt.log
 #Disable warning: "user" directive makes sense only if the master process runs with super-user privileges
 RUN sed -i "s/^\s*user\s\s*nginx;/#user nginx;/g" /etc/nginx/nginx.conf
 USER nginx
-CMD /scripts/generate_config.sh /etc/nginx/conf.d/simplelogin.conf && \
-    /scripts/generate_config.sh /scripts/certbot.sh && \
-    nginx -g "daemon off;"
+CMD /scripts/startup.sh
