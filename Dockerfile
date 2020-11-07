@@ -17,8 +17,7 @@ RUN rm -f /etc/nginx/conf.d/default.conf && \
     chmod a+x /scripts/* && \
     touch                /var/run/nginx.pid && \
     mkdir                /var/log/letsencrypt /var/lib/letsencrypt && \
-    chown -R nginx:nginx /var/run/nginx.pid /scripts /etc/nginx /var/cache/nginx  && \
-                         /var/log/letsencrypt /var/lib/letsencrypt  
+    chown -R nginx:nginx /var/log/letsencrypt /var/lib/letsencrypt /var/run/nginx.pid /scripts /etc/nginx /var/cache/nginx 
 
 USER nginx
 #Remove "user" directive to disable warning as nginx user: "user" directive makes sense only if the master process runs with super-user privileges
