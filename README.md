@@ -4,5 +4,5 @@ Nginx image with Certbot certificate update, tailor-made for [SimpleLogin](https
 
 The Chicken or the Egg?
 
-There is a tricky part runing cerbot within ngonx conainer:
+There is a tricky part runing cerbot within nginx conainer:
 Nginx is needed to perform the Let’s Encrypt validation But nginx won’t start if the certificates are missing... 
