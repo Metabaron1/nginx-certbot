@@ -8,8 +8,7 @@
 #COPY --from=qemu /usr/bin/qemu-$QEMU_ARCH-static /usr/bin
 
 ARG TARGET_ARCH=amd64
-#FROM $TARGET_ARCH/nginx:alpine
-FROM $TARGET_ARCH/nginx:1.14.0-alpine
+FROM $TARGET_ARCH/nginx:alpine
 ARG QEMU_ARCH=x86_64
 # Copy downloaded architecture emulation static binary
 COPY qemu-$QEMU_ARCH-static /usr/bin/
