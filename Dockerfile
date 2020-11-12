@@ -1,5 +1,4 @@
-#FROM nginx:alpine
-FROM nginx:1.14.0-alpine
+FROM nginx:alpine
 
 EXPOSE 8000 8443
 #VOLUME /etc/letsencrypt
