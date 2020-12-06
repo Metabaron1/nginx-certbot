@@ -14,6 +14,9 @@ if [ -z "$LETSENCRYPT_EMAIL" ] ; then
   LETSENCRYPT_EMAIL="support@$MYDOMAIN"
 fi
 
+eval $(cat /etc/resolv.conf|grep nameserver|sed -e "s/nameserver\(\s*\)/nameserver=/")
+
+sed -i "s|%nameserver%|$nameserver|g"			$TEMPLATE
 sed -i "s|%MYDOMAIN%|$MYDOMAIN|g"			$TEMPLATE
 sed -i "s|%MYHOSTNAME%|$MYHOSTNAME|g"			$TEMPLATE
 sed -i "s|%LETSENCRYPT_EMAIL%|$LETSENCRYPT_EMAIL|g"	$TEMPLATE
